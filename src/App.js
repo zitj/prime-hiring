@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import Header from './layout/Header/Header';
 import AddDevForm from './components/Forms/AddDevForm/AddDevForm';
 import HireDevForm from './components/Forms/HireDevForm/HireDevForm';
-
+import List from './components/List/List';
 function App() {
     const [addDevFormIsShown, setAddDevFormIsShown] = useState(false);
     const [hireDevFormIsShown, setHireDevFormIsShow] = useState(false);
@@ -30,6 +30,7 @@ function App() {
                 onShowAddDevForm={toggleShowAddDevForm}
                 onShowHireDevForm={toggleShowHireDevForm}
             ></Header>
+            <List></List>
         </Fragment>
     );
 }
