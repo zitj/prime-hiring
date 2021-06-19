@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './style/Developer.module.css';
 import Card from '../UI/Card/Card';
+import DevContext from '../../context/dev-context';
 
 const Developer = (props) => {
+    const devContext = useContext(DevContext);
+
+    const deleteProfile = () => {
+        devContext.onDelete(props.id);
+    };
     return (
         <Card>
             <div className={styles.developer}>
-                <button className={styles.deleteBtn}>
+                <button className={styles.deleteBtn} onClick={deleteProfile}>
                     <svg width="15" height="15" viewBox="0 0 172 172">
                         <g>
                             <path d="M0,172v-172h172v172z" fill="none"></path>

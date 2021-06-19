@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DUMMY_DATA from '../data/data';
 
 const DevContext = React.createContext({
     developers: [],
@@ -17,41 +18,9 @@ const DevContext = React.createContext({
         language,
         linkedIn
     ) => {},
+    onDelete: (id) => {},
 });
 export const DeveloperContextProvider = (props) => {
-    const DUMMY_DATA = [
-        {
-            name: 'Zoran',
-            email: 'kojzoran@gmail.com',
-            phoneNumber: '+38166253253',
-            location: 'Beograd',
-            profilePic:
-                'https://pbs.twimg.com/profile_images/1825094360/random_dude.jpg',
-            pricePerHour: 75,
-            yearsOfExp: 10,
-            technology: 'JavaScript',
-            description: 'Hello world my name is Zoran.',
-            language: 'serbian',
-            linkedIn: '/',
-            id: Date.now(),
-        },
-        {
-            name: 'Aleksandar',
-            email: 'avelj@gmail.com',
-            phoneNumber: '+381607350820',
-            location: 'Leskovac',
-            profilePic:
-                'https://pbs.twimg.com/profile_images/1047570794157674497/yygEMj-l_400x400.jpg',
-            pricePerHour: 20,
-            yearsOfExp: 2,
-            technology: 'JavaScript',
-            description: 'Hello world my name is Aleksandar.',
-            language: 'serbian',
-            linkedIn: '/',
-            id: Date.now(),
-        },
-    ];
-
     const [developers, setDevelopers] = useState(DUMMY_DATA);
 
     const getNewDeveloperData = (developer) => {
@@ -60,11 +29,21 @@ export const DeveloperContextProvider = (props) => {
         });
     };
 
+    const deleteDeveloper = (id) => {
+        setDevelopers((prevDevelopers) => {
+            const updatedDevelopers = prevDevelopers.filter(
+                (profile) => profile.id !== id
+            );
+            return updatedDevelopers;
+        });
+    };
+
     return (
         <DevContext.Provider
             value={{
                 developers: developers,
                 onCreate: getNewDeveloperData,
+                onDelete: deleteDeveloper,
             }}
         >
             {props.children}

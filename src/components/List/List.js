@@ -14,6 +14,7 @@ const List = (props) => {
                 pricePerHour={developer.pricePerHour}
                 technology={developer.technology}
                 location={developer.location}
+                id={developer.id}
             ></Developer>
         ))
         .reverse();
