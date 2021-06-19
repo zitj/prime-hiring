@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useState } from 'react';
+import Header from './layout/Header/Header';
+import AddDevForm from './components/Forms/AddDevForm/AddDevForm';
+import HireDevForm from './components/Forms/HireDevForm/HireDevForm';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [addDevFormIsShown, setAddDevFormIsShown] = useState(false);
+    const [hireDevFormIsShown, setHireDevFormIsShow] = useState(false);
+
+    const toggleShowAddDevForm = () => {
+        return addDevFormIsShown
+            ? setAddDevFormIsShown(false)
+            : setAddDevFormIsShown(true);
+    };
+    const toggleShowHireDevForm = () => {
+        return hireDevFormIsShown
+            ? setHireDevFormIsShow(false)
+            : setHireDevFormIsShow(true);
+    };
+
+    return (
+        <Fragment>
+            {addDevFormIsShown && (
+                <AddDevForm onShowAddDevForm={toggleShowAddDevForm} />
+            )}
+            {hireDevFormIsShown && (
+                <HireDevForm onShowHireDevForm={toggleShowHireDevForm} />
+            )}
+            <Header
+                onShowAddDevForm={toggleShowAddDevForm}
+                onShowHireDevForm={toggleShowHireDevForm}
+            ></Header>
+        </Fragment>
+    );
 }
 
 export default App;
