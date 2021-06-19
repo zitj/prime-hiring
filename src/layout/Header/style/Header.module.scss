@@ -24,7 +24,7 @@
     font: inherit;
     border: none;
     background-color: white;
-    color: #1e63c1;
+    color: #d4741f;
     padding: 0.75rem 2.5rem;
     display: flex;
     justify-content: space-around;
@@ -33,6 +33,10 @@
     font-weight: bold;
     transition: 0.1s;
     margin-right: 2em;
+    svg {
+        margin-left: 12px;
+        margin-top: 3px;
+    }
     &:hover {
         background-color: rgba(255, 255, 255, 0.835);
     }

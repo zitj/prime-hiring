@@ -1,0 +1,14 @@
+.card {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.096);
+    width: 25vh;
+    height: 400px;
+    border-radius: 20px;
+    transition: 0.1s ease-in-out;
+    background: white;
+    margin-left: 4em;
+    display: flex;
+    border: 1px solid #1e63c1;
+    button {
+        cursor: pointer;
+    }
+}

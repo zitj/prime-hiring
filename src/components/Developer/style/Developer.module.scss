@@ -1,0 +1,82 @@
+.developer {
+    position: relative;
+    color: #1e63c1;
+    .frame {
+        width: 25vh;
+        height: 205px;
+        display: block;
+        img {
+            width: 100%;
+            height: 90%;
+            border-top: 4px solid #1e63c1;
+            border-bottom: 2px solid #1e63c1;
+        }
+    }
+    h3 {
+        text-align: center;
+    }
+    .info {
+        p {
+            font-weight: 600;
+            margin: 0 0 5px 20px;
+            font-size: 0.9em;
+            // text-align: center;
+            span {
+                color: #d4741f;
+            }
+        }
+    }
+    .deleteBtn {
+        position: absolute;
+        right: 0;
+        border-radius: 50%;
+        border: none;
+        margin: 10px 10px 0 0;
+        background: white;
+        svg {
+            transition: 0.2s;
+            opacity: 0.3;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    .editBtn {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 1em;
+        text-transform: uppercase;
+        border: none;
+        background: #1e63c1;
+        color: white;
+        border-radius: 0 0 18px 18px;
+        cursor: pointer;
+        transition: 0.1s;
+        &:hover {
+            opacity: 0.9;
+        }
+        &:active {
+            opacity: 1;
+        }
+    }
+    .socialMedia {
+        position: absolute;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        bottom: 14.5%;
+        svg {
+            cursor: pointer;
+            &:hover {
+                opacity: 0.9;
+            }
+            &:active {
+                opacity: 1;
+            }
+            &:nth-child(2) {
+                margin: 5px 0 5px 2px;
+            }
+        }
+    }
+}

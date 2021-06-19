@@ -1,12 +1,21 @@
 import React, { Fragment, useContext } from 'react';
 import DevContext from '../../context/dev-context';
 import styles from './style/List.module.css';
-
+import Developer from '../Developer/Developer';
 const List = (props) => {
     const devContext = useContext(DevContext);
 
     const developers = devContext.developers
-        .map((developer) => <li key={developer.id}>{developer.name}</li>)
+        .map((developer) => (
+            <Developer
+                key={developer.id}
+                name={developer.name}
+                profilePic={developer.profilePic}
+                pricePerHour={developer.pricePerHour}
+                technology={developer.technology}
+                location={developer.location}
+            ></Developer>
+        ))
         .reverse();
 
     return (

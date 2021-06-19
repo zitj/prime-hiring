@@ -48,6 +48,7 @@ const AddDevForm = (props) => {
         setLinkedInState('');
         console.log(dev);
         devContext.onCreate(dev);
+        props.onShowAddDevForm();
     };
 
     const enterDevName = (event) => {
@@ -104,7 +105,7 @@ const AddDevForm = (props) => {
                 />
                 <Input
                     name="Phone number"
-                    type="number"
+                    type="tel"
                     value={phoneNumberState}
                     onChange={enterDevPhoneNumber}
                     className={style.input}
@@ -174,13 +175,6 @@ const AddDevForm = (props) => {
                     </select>
                 </div>
 
-                {/* <Input
-                    name="Description"
-                    value={descriptionState}
-                    type="text"
-                    onChange={enterDevDescription}
-                    className={style.description}
-                /> */}
                 <div className="inputContainer">
                     <label htmlFor="description">Description</label>
                     <textarea

@@ -1,0 +1,103 @@
+.developer {
+  position: relative;
+  color: #1e63c1;
+}
+
+.developer .frame {
+  width: 25vh;
+  height: 205px;
+  display: block;
+}
+
+.developer .frame img {
+  width: 100%;
+  height: 90%;
+  border-top: 4px solid #1e63c1;
+  border-bottom: 2px solid #1e63c1;
+}
+
+.developer h3 {
+  text-align: center;
+}
+
+.developer .info p {
+  font-weight: 600;
+  margin: 0 0 5px 20px;
+  font-size: 0.9em;
+}
+
+.developer .info p span {
+  color: #d4741f;
+}
+
+.developer .deleteBtn {
+  position: absolute;
+  right: 0;
+  border-radius: 50%;
+  border: none;
+  margin: 10px 10px 0 0;
+  background: white;
+}
+
+.developer .deleteBtn svg {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  opacity: 0.3;
+}
+
+.developer .deleteBtn svg:hover {
+  opacity: 1;
+}
+
+.developer .editBtn {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1em;
+  text-transform: uppercase;
+  border: none;
+  background: #1e63c1;
+  color: white;
+  border-radius: 0 0 18px 18px;
+  cursor: pointer;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.developer .editBtn:hover {
+  opacity: 0.9;
+}
+
+.developer .editBtn:active {
+  opacity: 1;
+}
+
+.developer .socialMedia {
+  position: absolute;
+  right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  bottom: 14.5%;
+}
+
+.developer .socialMedia svg {
+  cursor: pointer;
+}
+
+.developer .socialMedia svg:hover {
+  opacity: 0.9;
+}
+
+.developer .socialMedia svg:active {
+  opacity: 1;
+}
+
+.developer .socialMedia svg:nth-child(2) {
+  margin: 5px 0 5px 2px;
+}
+/*# sourceMappingURL=Developer.module.css.map */

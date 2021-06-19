@@ -30,6 +30,13 @@
         background: #1e63c1;
         border: none;
         border-radius: 10px;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.85;
+        }
+        &:active {
+            opacity: 1;
+        }
     }
 }
 label {

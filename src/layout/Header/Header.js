@@ -7,7 +7,7 @@ const Header = (props) => {
     return (
         <Fragment>
             <header className={styles.header}>
-                <h1>PrimeHiring</h1>
+                <h1>PrimeHiring+</h1>
                 <nav className={styles.nav}>
                     <HeaderAddDevButton
                         onShowAddDevForm={props.onShowAddDevForm}
