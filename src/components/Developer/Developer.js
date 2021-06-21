@@ -1,19 +1,24 @@
 import React, { useContext } from 'react';
 import styles from './style/Developer.module.css';
 import Card from '../UI/Card/Card';
-import DevContext from '../../context/dev-context';
 import { GitHubIcon, LinkedInIcon, XmarkIcon } from '../UI/icons/Icons';
+import DevContext from '../../context/dev-context';
 
 const Developer = (props) => {
     const devContext = useContext(DevContext);
-
-    const deleteProfile = () => {
-        devContext.onDelete(props.id);
+    const getCurrentDeveloperId = () => {
+        // devContext.onDelete(props.id);
+        devContext.onGetDev(props.id);
+        props.onShowDeleteDeveloperModal();
     };
+
     return (
         <Card>
             <div className={styles.developer}>
-                <button className={styles.deleteBtn} onClick={deleteProfile}>
+                <button
+                    className={styles.deleteBtn}
+                    onClick={getCurrentDeveloperId}
+                >
                     <XmarkIcon />
                 </button>
                 <h3>{props.name}</h3>

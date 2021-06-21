@@ -15,6 +15,7 @@ const List = (props) => {
                 technology={developer.technology}
                 location={developer.location}
                 id={developer.id}
+                onShowDeleteDeveloperModal={props.onShowDeleteDeveloperModal}
             ></Developer>
         ))
         .reverse();

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DUMMY_DATA from '../data/data';
 
 const DevContext = React.createContext({
+    currentDeveloper: {},
     developers: [],
     forms: [],
     onCreate: (
@@ -18,10 +19,16 @@ const DevContext = React.createContext({
         language,
         linkedIn
     ) => {},
+    onGetDevId: (id) => {},
     onDelete: (id) => {},
 });
 export const DeveloperContextProvider = (props) => {
     const [developers, setDevelopers] = useState(DUMMY_DATA);
+    const [currentDeveloperId, setCurrentDeveloperId] = useState('');
+
+    const getCurrentDeveloper = (id) => {
+        setCurrentDeveloperId(id);
+    };
 
     const getNewDeveloperData = (developer) => {
         setDevelopers((prevDevelopers) => {
@@ -41,9 +48,11 @@ export const DeveloperContextProvider = (props) => {
     return (
         <DevContext.Provider
             value={{
+                currentDeveloperId: currentDeveloperId,
                 developers: developers,
                 onCreate: getNewDeveloperData,
                 onDelete: deleteDeveloper,
+                onGetDev: getCurrentDeveloper,
             }}
         >
             {props.children}
