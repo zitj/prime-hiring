@@ -6,7 +6,11 @@ import styles from './style/Modal.module.css';
 const Backdrop = (props) => {
     return (
         <div
-            onClick={props.onShowAddDevForm || props.onShowHireDevForm}
+            onClick={
+                props.onShowAddDevForm ||
+                props.onShowHireDevForm ||
+                props.onShowDeleteDeveloperModal
+            }
             className={styles.backdrop}
         />
     );
@@ -29,6 +33,9 @@ const Modal = (props) => {
                 <Backdrop
                     onShowAddDevForm={props.onShowAddDevForm}
                     onShowHireDevForm={props.onShowHireDevForm}
+                    onShowDeleteDeveloperModal={
+                        props.onShowDeleteDeveloperModal
+                    }
                 />,
                 portalElement
             )}

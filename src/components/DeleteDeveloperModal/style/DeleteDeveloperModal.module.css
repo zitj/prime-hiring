@@ -1,0 +1,101 @@
+.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 450px;
+  color: #1e63c1;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.buttons button {
+  padding: 1em 3em;
+  border: none;
+  border-radius: 18px;
+  -webkit-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
+}
+
+.buttons button:nth-child(1) {
+  background: #e25050;
+  color: white;
+}
+
+.buttons button:nth-child(1):hover {
+  opacity: 0.8;
+}
+
+.buttons button:nth-child(1):active {
+  opacity: 1;
+}
+
+.buttons button:nth-child(2) {
+  background: white;
+  border: 1px solid #1e63c1;
+  color: #1e63c1;
+}
+
+.buttons button:nth-child(2):hover {
+  background: #1e63c1;
+  color: white;
+}
+
+.buttons button:nth-child(2):active {
+  opacity: 0.7;
+}
+
+.profilePic {
+  height: 180px;
+  width: 200px;
+  border-radius: 20px;
+  border: 2px solid #e25050;
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.5em;
+  color: #e25050;
+}
+
+.dev {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75%;
+  padding: 2em;
+  border-bottom: 1px solid rgba(19, 23, 87, 0.116);
+  border-top: 1px solid rgba(19, 23, 87, 0.116);
+}
+
+.dev p span {
+  font-weight: bold;
+  margin-left: 5px;
+  text-transform: capitalize;
+}
+
+.dev p:nth-child(2) span {
+  text-transform: lowercase;
+}
+/*# sourceMappingURL=DeleteDeveloperModal.module.css.map */

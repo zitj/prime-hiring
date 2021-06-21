@@ -21,7 +21,7 @@ function App() {
             : setHireDevFormIsShow(true);
     };
     const toggleDeleteDeveloperModal = () => {
-        return hireDevFormIsShown
+        return deleteDeveloperModal
             ? setDeleteDeveloperModal(false)
             : setDeleteDeveloperModal(true);
     };
