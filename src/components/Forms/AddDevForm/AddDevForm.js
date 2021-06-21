@@ -87,7 +87,7 @@ const AddDevForm = (props) => {
 
     return (
         <Modal onShowAddDevForm={props.onShowAddDevForm}>
-            <h1> Add a new developer 🐱‍🚀 </h1>
+            <h1> Add a new developer</h1>
             <form action="submit" onSubmit={addNewDev} className={style.form}>
                 <Input
                     name="Name"

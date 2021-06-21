@@ -1,3 +1,5 @@
+@import '../../../style/shared/variables';
+
 .form {
     margin: 0 auto;
     padding: 2em;
@@ -27,7 +29,7 @@
         width: 60%;
         padding: 1em 1em;
         color: white;
-        background: #1e63c1;
+        background: $primeBlue;
         border: none;
         border-radius: 10px;
         cursor: pointer;
@@ -41,10 +43,9 @@
 }
 label {
     display: block;
-    color: #1e63c1;
+    color: $primeBlue;
     margin: 10px 0 5px;
 }
 h1 {
     text-align: center;
-    margin: 0;
 }

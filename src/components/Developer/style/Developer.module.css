@@ -89,14 +89,15 @@
 
 .developer .socialMedia svg {
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .developer .socialMedia svg:hover {
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .developer .socialMedia svg:active {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 .developer .socialMedia svg:nth-child(2) {

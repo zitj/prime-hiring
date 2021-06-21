@@ -1,3 +1,5 @@
+@import '../../../../style/shared/variables';
+
 .card {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.096);
     width: 25vh;
@@ -7,7 +9,12 @@
     background: white;
     margin: 0 0 3em 4em;
     display: flex;
-    border: 1px solid #1e63c1;
+    border: 1px solid $primeBlue;
+    transition: 0.19s ease-in-out;
+    transform: translateY(0px);
+    &:hover {
+        transform: translateY(-3px);
+    }
     button {
         cursor: pointer;
     }

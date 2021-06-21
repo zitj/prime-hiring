@@ -12,6 +12,15 @@
   display: -ms-flexbox;
   display: flex;
   border: 1px solid #1e63c1;
+  -webkit-transition: 0.19s ease-in-out;
+  transition: 0.19s ease-in-out;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.card:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 .card button {
