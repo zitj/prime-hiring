@@ -1,4 +1,4 @@
-const DUMMY_DATA = [
+export const DUMMY_DATA = [
     {
         name: 'Zoran',
         email: 'kojzoran@gmail.com',
@@ -13,6 +13,9 @@ const DUMMY_DATA = [
         language: 'serbian',
         linkedIn: '/',
         id: 1,
+        hired: false,
+        hiredFrom: '',
+        hiredTill: '',
     },
     {
         name: 'Milica',
@@ -28,6 +31,9 @@ const DUMMY_DATA = [
         language: 'serbian',
         linkedIn: '/',
         id: 2,
+        hired: false,
+        hiredFrom: '',
+        hiredTill: '',
     },
     {
         name: 'Aleksandar',
@@ -43,7 +49,9 @@ const DUMMY_DATA = [
         language: 'serbian',
         linkedIn: '/',
         id: 3,
+        hired: false,
+        hiredFrom: '',
+        hiredTill: '',
     },
 ];
 
-export default DUMMY_DATA;

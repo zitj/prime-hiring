@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import DUMMY_DATA from '../data/data';
+import { DUMMY_DATA } from '../data/data';
 
 const DevContext = React.createContext({
     currentDeveloper: {},
+    // hiredDevelopers: [],
     developers: [],
     forms: [],
     onCreate: (
@@ -17,7 +18,10 @@ const DevContext = React.createContext({
         technology,
         description,
         language,
-        linkedIn
+        linkedIn,
+        hired,
+        hiredFrom,
+        hiredTill,
     ) => {},
     onEdit: (
         name,
@@ -31,14 +35,19 @@ const DevContext = React.createContext({
         technology,
         description,
         language,
-        linkedIn
+        linkedIn,
+        hired,
+        hiredFrom,
+        hiredTill,
+
     ) => {},
     onGetDev: (id) => {},
     onDelete: (id) => {},
+    onHire: (arrayOfId) => {},
 });
 export const DeveloperContextProvider = (props) => {
     const [developers, setDevelopers] = useState(DUMMY_DATA);
-    const [hiredDevelopers, setHiredDevelopers] = useState([]);
+    // const [hiredDevelopers, setHiredDevelopers] = useState([]);
     const [currentDeveloperId, setCurrentDeveloperId] = useState('');
 
     const getCurrentDeveloper = (id) => {
@@ -72,15 +81,25 @@ export const DeveloperContextProvider = (props) => {
         });
     };
 
-    const hireDevelopers = (id) => {
-        setHiredDevelopers((prevDevelopers) => {
-            const updatedDevelopers = prevDevelopers.filter((developer) => {
-                if (developer.id === id) {
-                    return developer;
+    const hireDevelopers = (arrayOfIds, startDate, endDate) => {
+        
+
+        setDevelopers((prevDevelopers) => {
+
+        const updatedDevelopers = prevDevelopers.map(developer => {
+            arrayOfIds.forEach(id => {
+                if(developer.id === +id){
+                    developer.hired = true;
+                    developer.hiredFrom = startDate;
+                    developer.hiredTill = endDate;
                 }
-                return updatedDevelopers;
-            });
+            })
+            return developer;
         });
+        console.log(updatedDevelopers);
+        return updatedDevelopers;
+    });
+      
     };
 
     return (
@@ -88,10 +107,12 @@ export const DeveloperContextProvider = (props) => {
             value={{
                 currentDeveloperId: currentDeveloperId,
                 developers: developers,
+                // hiredDevelopers: hiredDevelopers,
                 onCreate: getNewDeveloperData,
                 onDelete: deleteDeveloper,
                 onGetDev: getCurrentDeveloper,
                 onEdit: editDeveloper,
+                onHire: hireDevelopers
             }}
         >
             {props.children}

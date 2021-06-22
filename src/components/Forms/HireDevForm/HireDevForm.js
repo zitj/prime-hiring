@@ -6,10 +6,10 @@ import DevContext from '../../../context/dev-context';
 const HireDevForm = (props) => {
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
-    const [hiredDevsId, setHiredDevsId] = useState([]);
-    const [targetValue, setTargetValue] = useState(false);
+    // const [hiredDevsId, setHiredDevsId] = useState([]);
+    // const [targetValue, setTargetValue] = useState(false);
 
-    const array = [];
+    let array = [];
 
     const startingDate = (event) => {
         setStartDate(event.target.value);
@@ -19,19 +19,41 @@ const HireDevForm = (props) => {
     };
 
     const hiringDevsId = (event) => {
-        console.log(event.target.value);
-
-        if (targetValue) {
-            setTargetValue(false);
-        } else {
-            setTargetValue(true);
+        
+        if(event.target.checked){
+            console.log('it is checked');
+            array.push(event.target.value)
+            console.log(array);
         }
+        else{
+            console.log('it is unchecked');
+            for(let i = 0; i < array.length; i++){
+                if(array[i] === event.target.value){
+                    array.splice(i, 1);
+                    // console.log(array);
+                 
+                }else{
+                    // setHiredDevsId((prevHiredDevsId) => {
+                    //     return [...array , ...prevHiredDevsId];
+                    // });
+                }
+            }
+            console.log(array);
+            // setHiredDevsId((prevDevelopers) => {
+            //     return   [...prevDevelopers, ...array];
+            // });
+        
+        }
+        // setHiredDevsId((prevHiredDevsId) => {
+        //     return [array, ...prevHiredDevsId];
+        // });
     };
 
+
     const devContext = useContext(DevContext);
-    const developers = devContext.developers
-        .map((developer) => (
-            <tr>
+    const developers = devContext.developers.filter(developer => !developer.hired)
+        .map((developer) => 
+                <tr>
                 <td>{developer.name}</td>
                 <td>{developer.email}</td>
                 <td>{developer.phoneNumber}</td>
@@ -42,23 +64,23 @@ const HireDevForm = (props) => {
                 <td>
                     <input
                         type="checkbox"
-                        name=""
+                        name={developer.name}
                         id={developer.id}
-                        value={targetValue}
-                        onClick={hiringDevsId}
-                        // onToggle={hiringDevsId}
+                        value={developer.id}
+                        onChange={hiringDevsId}
                     />
                 </td>
             </tr>
-        ))
-        .reverse();
+            ).reverse();
 
     const hireDevelopers = (event) => {
         event.preventDefault();
         console.log('submited');
         console.log(startDate);
         console.log(endDate);
-        console.log(hiredDevsId);
+        devContext.onHire(array, startDate, endDate);
+        // console.log(devContext.hiredDevelopers);
+        // console.log(array);
     };
     return (
         <Modal onShowHireDevForm={props.onShowHireDevForm}>
@@ -86,6 +108,7 @@ const HireDevForm = (props) => {
                             onChange={endingDate}
                         />
                     </div>
+                    
                 </div>
 
                 <table>
