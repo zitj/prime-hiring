@@ -6,7 +6,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 578px;
-
+    transition: .2s ease-in-out;
     .input,
     select,
     .description {
@@ -50,6 +50,7 @@ h1 {
     &:active {
         opacity: 1;
     }
+    transition: .2s ease-in-out;
 }
 .datePicker,
 .hireDevWrap {
@@ -57,14 +58,26 @@ h1 {
     justify-content: space-around;
 }
 .datePicker {
-    width: 30%;
-    margin-left: 3.5%;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 3%;
+    input{
+        color: $primeBlue;
+        border: 1px solid #bbbbbb;
+        padding: .5em 5em;
+    }
 }
 .hireDevForm {
     margin: 0 auto;
+    transition: .2s ease-in-out;
     .submitBtn {
         width: 40%;
-        margin: 0 30%;
+        margin: 0 30% 2% 30%;
+    }
+    .checkbox{
+        cursor: pointer;
+        height: 25px;
+        width: 25px;
     }
 }
 table {
@@ -76,7 +89,18 @@ table {
 
 td,
 th {
-    border: 1px solid #dddddd;
+    border: 1px solid #bbbbbb;
     padding: 8px;
     text-align: center;
+}
+th{
+    color: $primeOrange;
+}
+td{
+    color: $primeBlue;
+    font-weight: bold;
+    text-transform: capitalize;
+    &:nth-child(2){
+        text-transform: lowercase;
+    }
 }

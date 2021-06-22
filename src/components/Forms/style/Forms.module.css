@@ -7,6 +7,8 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 578px;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 .form .input,
@@ -48,6 +50,8 @@ h1 {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 .submitBtn:hover {
@@ -68,17 +72,32 @@ h1 {
 }
 
 .datePicker {
-  width: 30%;
-  margin-left: 3.5%;
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 3%;
+}
+
+.datePicker input {
+  color: #1e63c1;
+  border: 1px solid #bbbbbb;
+  padding: .5em 5em;
 }
 
 .hireDevForm {
   margin: 0 auto;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 .hireDevForm .submitBtn {
   width: 40%;
-  margin: 0 30%;
+  margin: 0 30% 2% 30%;
+}
+
+.hireDevForm .checkbox {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
 }
 
 table {
@@ -90,8 +109,22 @@ table {
 
 td,
 th {
-  border: 1px solid #dddddd;
+  border: 1px solid #bbbbbb;
   padding: 8px;
   text-align: center;
+}
+
+th {
+  color: #d4741f;
+}
+
+td {
+  color: #1e63c1;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+td:nth-child(2) {
+  text-transform: lowercase;
 }
 /*# sourceMappingURL=Forms.module.css.map */

@@ -92,6 +92,7 @@ export const DeveloperContextProvider = (props) => {
                     developer.hired = true;
                     developer.hiredFrom = startDate;
                     developer.hiredTill = endDate;
+                    console.log(developer);
                 }
             })
             return developer;
