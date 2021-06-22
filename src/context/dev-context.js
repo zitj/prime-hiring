@@ -38,6 +38,7 @@ const DevContext = React.createContext({
 });
 export const DeveloperContextProvider = (props) => {
     const [developers, setDevelopers] = useState(DUMMY_DATA);
+    const [hiredDevelopers, setHiredDevelopers] = useState([]);
     const [currentDeveloperId, setCurrentDeveloperId] = useState('');
 
     const getCurrentDeveloper = (id) => {
@@ -68,6 +69,17 @@ export const DeveloperContextProvider = (props) => {
                 return developer;
             });
             return updatedDevelopers;
+        });
+    };
+
+    const hireDevelopers = (id) => {
+        setHiredDevelopers((prevDevelopers) => {
+            const updatedDevelopers = prevDevelopers.filter((developer) => {
+                if (developer.id === id) {
+                    return developer;
+                }
+                return updatedDevelopers;
+            });
         });
     };
 

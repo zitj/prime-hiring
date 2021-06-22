@@ -5,7 +5,7 @@
     width: 100%;
     height: 100vh;
     z-index: 20;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(24, 19, 1, 0.75);
 }
 
 .modal {
@@ -23,8 +23,8 @@
 
 @media (min-width: 768px) {
     .modal {
-        width: 40rem;
-        left: calc(50% - 20rem);
+        width: 75rem;
+        left: calc(50% - 37.5rem);
     }
 }
 
