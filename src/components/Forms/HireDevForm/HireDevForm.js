@@ -8,7 +8,7 @@ const HireDevForm = (props) => {
     const [endDate, setEndDate] = useState('');
 
     let arrayOfIds = [];
-
+    let today = new Date().toJSON().slice(0,10).replace(/-/g,'-');
 
     const hiringDevsId = (event) => {
 
@@ -105,7 +105,7 @@ const HireDevForm = (props) => {
                         <label htmlFor="">Starting date</label>
                         <input
                             type="date"
-                            min="2018-05-05"
+                            min={today}
                             value={startDate}
                             onChange={startingDate}
                         />
@@ -114,6 +114,7 @@ const HireDevForm = (props) => {
                         <label htmlFor="">End date</label>
                         <input
                             type="date"
+                            min={startDate}
                             value={endDate}
                             onChange={endingDate}
                         />
