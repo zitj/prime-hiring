@@ -19,6 +19,20 @@ const DevContext = React.createContext({
         language,
         linkedIn
     ) => {},
+    onEdit: (
+        name,
+        id,
+        email,
+        phoneNumber,
+        location,
+        profilePic,
+        pricePerHour,
+        yearsOfExp,
+        technology,
+        description,
+        language,
+        linkedIn
+    ) => {},
     onGetDevId: (id) => {},
     onDelete: (id) => {},
 });
@@ -39,8 +53,20 @@ export const DeveloperContextProvider = (props) => {
     const deleteDeveloper = (id) => {
         setDevelopers((prevDevelopers) => {
             const updatedDevelopers = prevDevelopers.filter(
-                (profile) => profile.id !== id
+                (developer) => developer.id !== id
             );
+            return updatedDevelopers;
+        });
+    };
+
+    const editDeveloper = (editedDev) => {
+        setDevelopers((prevDevelopers) => {
+            const updatedDevelopers = prevDevelopers.filter((developer) => {
+                if (developer.id === editedDev.id) {
+                    for (var k in editedDev) developer[k] = editedDev[k];
+                }
+                return developer;
+            });
             return updatedDevelopers;
         });
     };
@@ -53,6 +79,7 @@ export const DeveloperContextProvider = (props) => {
                 onCreate: getNewDeveloperData,
                 onDelete: deleteDeveloper,
                 onGetDev: getCurrentDeveloper,
+                onEdit: editDeveloper,
             }}
         >
             {props.children}

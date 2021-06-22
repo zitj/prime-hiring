@@ -80,9 +80,28 @@ const AddDevForm = (props) => {
         props.onShowAddDevForm();
     };
 
-    const conditionalFunction = currentDeveloper[0]
-        ? console.log('editovanje')
-        : addNewDev;
+    const editDeveloper = (event) => {
+        event.preventDefault();
+        const dev = {
+            name: nameState,
+            email: emailState,
+            phoneNumber: phoneNumberState,
+            location: locationState,
+            profilePic: profilePictureState,
+            pricePerHour: pricePerHourState,
+            yearsOfExp: yearsOfExpState,
+            technology: technologyState,
+            description: descriptionState,
+            language: languageState,
+            linkedIn: linkedInState,
+            id: currentDeveloper[0].id,
+        };
+        console.log(dev);
+        devContext.onEdit(dev);
+        props.onShowAddDevForm();
+    };
+
+    const conditionalFunction = currentDeveloper[0] ? editDeveloper : addNewDev;
 
     const enterDevName = (event) => {
         setNameState(event.target.value);
