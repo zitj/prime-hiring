@@ -33,7 +33,7 @@ const DevContext = React.createContext({
         language,
         linkedIn
     ) => {},
-    onGetDevId: (id) => {},
+    onGetDev: (id) => {},
     onDelete: (id) => {},
 });
 export const DeveloperContextProvider = (props) => {
