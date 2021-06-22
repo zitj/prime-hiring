@@ -19,7 +19,8 @@ const Developer = (props) => {
 
     return (
         <Card>
-            <div className={styles.developer}>
+            {props.isHired && <div className={styles.hiredOverlay}><p>Hired until {props.hiredTill}</p></div>}
+            <div className={(props.isHired) ? styles.hiredDeveloper : styles.developer}>
                 <button
                     className={styles.deleteBtn}
                     onClick={getCurrentDeveloperId}

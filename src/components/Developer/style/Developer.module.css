@@ -1,15 +1,37 @@
-.developer {
+.hiredOverlay {
+  height: 40px;
+  width: 150px;
+  padding: 0px 10px;
+  position: absolute;
+  background: #fb4f38;
+  color: white;
+  z-index: 200;
+  border-radius: 5px;
+  font-size: .85em;
+  -webkit-transform: rotate(-30deg) translateX(-40px) translateY(-20px);
+          transform: rotate(-30deg) translateX(-40px) translateY(-20px);
+}
+
+.hiredOverlay p {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.developer,
+.hiredDeveloper {
   position: relative;
   color: #1e63c1;
 }
 
-.developer .frame {
+.developer .frame,
+.hiredDeveloper .frame {
   width: 25vh;
   height: 205px;
   display: block;
 }
 
-.developer .frame img {
+.developer .frame img,
+.hiredDeveloper .frame img {
   width: 100%;
   height: 90%;
   opacity: 0.85;
@@ -17,22 +39,26 @@
   border-bottom: 2px solid #1e63c1;
 }
 
-.developer h3 {
+.developer h3,
+.hiredDeveloper h3 {
   text-align: center;
 }
 
-.developer .info p {
+.developer .info p,
+.hiredDeveloper .info p {
   font-weight: 600;
   margin: 0 0 5px 20px;
   font-size: 0.9em;
 }
 
-.developer .info p span {
+.developer .info p span,
+.hiredDeveloper .info p span {
   color: #d4741f;
   text-transform: capitalize;
 }
 
-.developer .deleteBtn {
+.developer .deleteBtn,
+.hiredDeveloper .deleteBtn {
   position: absolute;
   right: 0;
   border-radius: 50%;
@@ -41,17 +67,20 @@
   background: white;
 }
 
-.developer .deleteBtn svg {
+.developer .deleteBtn svg,
+.hiredDeveloper .deleteBtn svg {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   opacity: 0.3;
 }
 
-.developer .deleteBtn svg:hover {
+.developer .deleteBtn svg:hover,
+.hiredDeveloper .deleteBtn svg:hover {
   opacity: 1;
 }
 
-.developer .editBtn {
+.developer .editBtn,
+.hiredDeveloper .editBtn {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -66,15 +95,18 @@
   transition: 0.1s;
 }
 
-.developer .editBtn:hover {
+.developer .editBtn:hover,
+.hiredDeveloper .editBtn:hover {
   opacity: 0.9;
 }
 
-.developer .editBtn:active {
+.developer .editBtn:active,
+.hiredDeveloper .editBtn:active {
   opacity: 1;
 }
 
-.developer .socialMedia {
+.developer .socialMedia,
+.hiredDeveloper .socialMedia {
   position: absolute;
   right: 20px;
   display: -webkit-box;
@@ -87,20 +119,28 @@
   bottom: 14.5%;
 }
 
-.developer .socialMedia svg {
+.developer .socialMedia svg,
+.hiredDeveloper .socialMedia svg {
   cursor: pointer;
   opacity: 0.8;
 }
 
-.developer .socialMedia svg:hover {
+.developer .socialMedia svg:hover,
+.hiredDeveloper .socialMedia svg:hover {
   opacity: 1;
 }
 
-.developer .socialMedia svg:active {
+.developer .socialMedia svg:active,
+.hiredDeveloper .socialMedia svg:active {
   opacity: 0.9;
 }
 
-.developer .socialMedia svg:nth-child(2) {
+.developer .socialMedia svg:nth-child(2),
+.hiredDeveloper .socialMedia svg:nth-child(2) {
   margin: 5px 0 5px 2px;
+}
+
+.hiredDeveloper {
+  opacity: .5;
 }
 /*# sourceMappingURL=Developer.module.css.map */

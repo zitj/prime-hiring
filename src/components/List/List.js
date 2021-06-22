@@ -17,6 +17,9 @@ const List = (props) => {
                 id={developer.id}
                 onShowDeleteDeveloperModal={props.onShowDeleteDeveloperModal}
                 onShowAddDevForm={props.onShowAddDevForm}
+                isHired = {developer.hired}
+                hiredFrom = {developer.hiredFrom}
+                hiredTill = {developer.hiredTill}
             ></Developer>
         ))
         .reverse();
