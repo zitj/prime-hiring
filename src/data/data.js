@@ -17,7 +17,7 @@ const DUMMY_DATA = [
     {
         name: 'Milica',
         email: 'milica@gmail.com',
-        phoneNumber: '+381607350820',
+        phoneNumber: '+381645665462',
         location: 'niš',
         profilePic:
             'http://1.bp.blogspot.com/-496tCQnFiZ4/Uo1AHkMAYXI/AAAAAAAAAM4/qhPZzKO2_Cc/s1600/Makeover.jpg',

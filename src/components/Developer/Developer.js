@@ -6,10 +6,15 @@ import DevContext from '../../context/dev-context';
 
 const Developer = (props) => {
     const devContext = useContext(DevContext);
+
     const getCurrentDeveloperId = () => {
-        // devContext.onDelete(props.id);
         devContext.onGetDev(props.id);
         props.onShowDeleteDeveloperModal();
+    };
+
+    const editCurrentDeveloper = () => {
+        devContext.onGetDev(props.id);
+        props.onShowAddDevForm();
     };
 
     return (
@@ -40,7 +45,12 @@ const Developer = (props) => {
                     <LinkedInIcon />
                     <GitHubIcon />
                 </div>
-                <button className={styles.editBtn}>Edit profile</button>
+                <button
+                    className={styles.editBtn}
+                    onClick={editCurrentDeveloper}
+                >
+                    Edit profile
+                </button>
             </div>
         </Card>
     );

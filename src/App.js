@@ -47,6 +47,7 @@ function App() {
                 onShowHireDevForm={toggleShowHireDevForm}
             ></Header>
             <List
+                onShowAddDevForm={toggleShowAddDevForm}
                 onShowDeleteDeveloperModal={toggleDeleteDeveloperModal}
             ></List>
         </Fragment>

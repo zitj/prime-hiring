@@ -9,7 +9,7 @@ const DeleteDeveloperModal = (props) => {
         (developer) => developer.id === devContext.currentDeveloperId
     );
 
-    const deleteUser = () => {
+    const deleteDeveloper = () => {
         devContext.onDelete(currentDeveloper[0].id);
         props.onShowDeleteDeveloperModal();
     };
@@ -46,7 +46,7 @@ const DeleteDeveloperModal = (props) => {
                     </div>
                 </div>
                 <div className={styles.buttons}>
-                    <button onClick={deleteUser}>Delete</button>
+                    <button onClick={deleteDeveloper}>Delete</button>
                     <button onClick={props.onShowDeleteDeveloperModal}>
                         Cancel
                     </button>

@@ -5,19 +5,48 @@ import style from '../style/Forms.module.css';
 import Input from '../../UI/Input/Input';
 
 const AddDevForm = (props) => {
-    const [nameState, setNameState] = useState('');
-    const [emailState, setEmailState] = useState('');
-    const [phoneNumberState, setPhoneNumberState] = useState('');
-    const [locationState, setLocationState] = useState('');
-    const [profilePictureState, setProfilePictureState] = useState('');
-    const [pricePerHourState, setPricePerHourState] = useState('');
-    const [yearsOfExpState, setYearsOfExpState] = useState('');
-    const [technologyState, setTechnologyState] = useState('');
-    const [descriptionState, setDescriptionState] = useState('');
-    const [languageState, setLanguageState] = useState('');
-    const [linkedInState, setLinkedInState] = useState('');
-
     const devContext = useContext(DevContext);
+    const currentDeveloper = devContext.developers.filter(
+        (developer) => developer.id === devContext.currentDeveloperId
+    );
+
+    const [nameState, setNameState] = useState(
+        currentDeveloper[0] ? currentDeveloper[0].name : ''
+    );
+    const [emailState, setEmailState] = useState(
+        currentDeveloper[0] ? currentDeveloper[0].email : ''
+    );
+    const [phoneNumberState, setPhoneNumberState] = useState(
+        currentDeveloper[0] ? currentDeveloper[0].phoneNumber : ''
+    );
+    const [locationState, setLocationState] = useState(
+        currentDeveloper[0] ? currentDeveloper[0].location : ''
+    );
+    const [profilePictureState, setProfilePictureState] = useState(
+        currentDeveloper[0] ? currentDeveloper[0].profilePic : ''
+    );
+    const [pricePerHourState, setPricePerHourState] = useState(
+        currentDeveloper[0] ? currentDeveloper[0].pricePerHour : ''
+    );
+    const [yearsOfExpState, setYearsOfExpState] = useState(
+        currentDeveloper[0] ? currentDeveloper[0].yearsOfExp : ''
+    );
+    const [technologyState, setTechnologyState] = useState(
+        currentDeveloper[0] ? currentDeveloper[0].technology : ''
+    );
+    const [descriptionState, setDescriptionState] = useState(
+        currentDeveloper[0] ? currentDeveloper[0].description : ''
+    );
+    const [languageState, setLanguageState] = useState(
+        currentDeveloper[0] ? currentDeveloper[0].language : ''
+    );
+    const [linkedInState, setLinkedInState] = useState(
+        currentDeveloper[0] ? currentDeveloper[0].linkedIn : ''
+    );
+
+    const conditionalHeading = currentDeveloper[0]
+        ? `Edit developer`
+        : `Add new developer`;
 
     const addNewDev = (event) => {
         event.preventDefault();
@@ -50,6 +79,10 @@ const AddDevForm = (props) => {
         devContext.onCreate(dev);
         props.onShowAddDevForm();
     };
+
+    const conditionalFunction = currentDeveloper[0]
+        ? console.log('editovanje')
+        : addNewDev;
 
     const enterDevName = (event) => {
         setNameState(event.target.value);
@@ -87,8 +120,12 @@ const AddDevForm = (props) => {
 
     return (
         <Modal onShowAddDevForm={props.onShowAddDevForm}>
-            <h1> Add a new developer</h1>
-            <form action="submit" onSubmit={addNewDev} className={style.form}>
+            <h1>{conditionalHeading}</h1>
+            <form
+                action="submit"
+                onSubmit={conditionalFunction}
+                className={style.form}
+            >
                 <Input
                     name="Name"
                     type="text"
@@ -187,7 +224,7 @@ const AddDevForm = (props) => {
                     ></textarea>
                 </div>
                 <button type="submit" className={style.submitBtn}>
-                    Add developer
+                    {conditionalHeading}
                 </button>
             </form>
         </Modal>
